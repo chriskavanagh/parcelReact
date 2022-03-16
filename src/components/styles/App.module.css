@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 300px 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ".  homeWrapper homeWrapper . homeWrapper"
+    "sideWrapper . homeWrapper homeWrapper ."
+    "sideWrapper . aboutWrapper aboutWrapper ."
+    "sideWrapper . aboutWrapper aboutWrapper .";
+}
+
+.homeWrapper {
+  grid-area: homeWrapper;
+}
+
+.sideWrapper {
+  grid-area: sideWrapper;
+}
+
+.aboutWrapper {
+  grid-area: aboutWrapper;
+}

@@ -2,19 +2,16 @@
   "name": "parcel-react",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "React With A Parcel-2 Setup. For Instruction Only",
+  "main": "src/index.js",
   "scripts": {
     "start": "parcel src/index.html --open",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html --dist-dir ./dist"
   },
   "keywords": [],
   "author": "Chris",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.17.5",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
     "postcss": "^8.4.8",
     "postcss-modules": "^4.3.1"
   },

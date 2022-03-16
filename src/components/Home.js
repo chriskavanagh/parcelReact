@@ -4,7 +4,7 @@ import * as classes from "./styles/Home.module.css";
 export default function Home() {
   return (
     <section className={classes.wrapper}>
-      <h1 className={classes.top}>Welcome To A React App With Parcel</h1>
+      <h1 className={classes.top}>React App With Parcel</h1>
       <p className={[classes.para, classes.text].join(" ")}>
         ipsum dolor sit amet consectetur adipisicing elit. Odio excepturi
         eligendi minima ab hic. Dolorem praesentium possimus ea, a consequuntur
