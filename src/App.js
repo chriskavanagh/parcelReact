@@ -9,8 +9,8 @@ import React from "react";
 function App() {
   return (
     <>
-      <Sidebar />
       <BrowserRouter>
+        <Sidebar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

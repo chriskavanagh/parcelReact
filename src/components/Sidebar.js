@@ -1,24 +1,39 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import * as classes from "./styles/Sidebar.module.css";
 
 export default function Sidebar() {
   return (
     <section className={classes.wrapper}>
-      <div className={classes.top}>
-        <h3>React</h3>
-      </div>
-      <div>
-        <h3>React</h3>
-      </div>
-      <div>
-        <h3>React</h3>
-      </div>
-      <div>
-        <h3>React</h3>
-      </div>
-      <div>
-        <h3>React</h3>
-      </div>
+      <nav className={classes.nav}>
+        <ul className={classes.top}>
+          <li>
+            <Link to="/about" className={classes.link}>
+              <h3>React</h3>
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className={classes.link}>
+              <h3>React</h3>
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className={classes.link}>
+              <h3>React</h3>
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className={classes.link}>
+              <h3>React</h3>
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className={classes.link}>
+              <h3>React</h3>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </section>
   );
 }
