@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import * as classes from "./styles/Sidebar.module.css";
 
-export default function Sidebar() {
+export default function Sidebar({ open }) {
+  console.log(open);
   return (
-    <section className={classes.wrapper}>
+    <section className={open ? classes.openWrapper : classes.wrapper}>
       <nav className={classes.nav}>
         <ul className={classes.top}>
           <li>

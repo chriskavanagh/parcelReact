@@ -3,10 +3,11 @@
   column-gap: 1rem;
   row-gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100px 330px;
+  grid-template-rows: 100px 330px 50px;
   grid-template-areas:
     ". top ."
-    ". one .";
+    ". one ."
+    ". btn .";
 }
 
 .top {
@@ -34,4 +35,9 @@
 
 .one {
   grid-area: one;
+}
+
+.btn {
+  grid-area: btn;
+  width: 20%;
 }

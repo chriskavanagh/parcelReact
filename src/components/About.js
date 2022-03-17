@@ -1,7 +1,7 @@
 import React from "react";
 import * as classes from "./styles/About.module.css";
 
-export default function About() {
+export default function About({ click }) {
   return (
     <section className={classes.wrapper}>
       <h1 className={classes.top}>About Us</h1>
@@ -12,6 +12,9 @@ export default function About() {
         quisquam eligendi dolorum natus expedita quo omnis eaque aut harum
         repellat amet.
       </p>
+      <button className={classes.btn} onClick={click}>
+        Open Side Drawer
+      </button>
     </section>
   );
 }
