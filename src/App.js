@@ -4,7 +4,7 @@ import Sidebar from "./components/Sidebar";
 import About from "./components/About";
 import Home from "./components/Home";
 //import ReactDOM from "react-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function App() {
   let side;
@@ -15,6 +15,21 @@ function App() {
     console.log(open);
     setOpen(!open);
   };
+
+  const onClick = (e) => {
+    console.log("CLICKED");
+    if (open) {
+      setOpen(!open);
+    }
+  };
+
+  useEffect(() => {
+    document.body.addEventListener("click", onClick);
+
+    return () => {
+      document.body.removeEventListener("click", onClick);
+    };
+  });
 
   // not using this way to show <Sidebar/>
   /* if (open) {
