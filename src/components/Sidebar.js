@@ -3,34 +3,46 @@ import { Link } from "react-router-dom";
 import * as classes from "./styles/Sidebar.module.css";
 
 export default function Sidebar({ open }) {
-  console.log(typeof 10n);
+  //console.log(typeof 10n);
+  const [width, setWidth] = React.useState(0);
+
+  React.useEffect(() => {
+    async function handleResize() {
+      const w = await document.body.clientWidth;
+      setWidth(w);
+      console.log(width);
+    }
+    window.addEventListener("resize", handleResize);
+    window.removeEventListener("resize", handleResize);
+  }, [width]);
+
   return (
     <section className={open ? classes.openWrapper : classes.wrapper}>
       <nav className={classes.nav}>
         <ul className={classes.top}>
-          <li>
+          <li key={"100"} className={classes.myLink}>
             <Link to="/" className={classes.link}>
-              <h3>React</h3>
+              Home
             </Link>
           </li>
-          <li>
-            <Link to="/" className={classes.link}>
-              <h3>React</h3>
-            </Link>
-          </li>
-          <li>
+          <li key={"101"} className={classes.myLink}>
             <Link to="/about" className={classes.link}>
-              <h3>React</h3>
+              About
             </Link>
           </li>
-          <li>
+          <li key={"102"} className={classes.myLink}>
             <Link to="/" className={classes.link}>
-              <h3>React</h3>
+              Home
             </Link>
           </li>
-          <li>
+          <li key={"103"} className={classes.myLink}>
+            <Link to="/" className={classes.link}>
+              React
+            </Link>
+          </li>
+          <li key={"104"} className={classes.myLink}>
             <Link to="/about" className={classes.link}>
-              <h3>React</h3>
+              React
             </Link>
           </li>
         </ul>

@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import About from "./components/About";
 import Home from "./components/Home";
 //import ReactDOM from "react-dom";
-import React, { useState, useEffect } from "react";
 
 function App() {
   let side;
@@ -16,6 +16,7 @@ function App() {
     setOpen(!open);
   };
 
+  // function to close sideBar when body is clicked
   const onClick = (e) => {
     console.log("CLICKED");
     if (open) {
@@ -23,6 +24,12 @@ function App() {
     }
   };
 
+  /* const onClick = (e) => {
+    console.log("CLICKED");
+    open ? setOpen(!open) : console.log("Sidebar Not Open");
+  }; */
+
+  // adds onClick body handler to Body.
   useEffect(() => {
     document.body.addEventListener("click", onClick);
 
