@@ -7,7 +7,8 @@ import Home from "./components/Home";
 //import ReactDOM from "react-dom";
 
 function App() {
-  let side;
+  // initialize side variable.
+  //let side;
   const [open, setOpen] = useState(false);
 
   // prop of open is true, className openWrapper is used on <Sidebar/>

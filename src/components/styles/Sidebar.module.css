@@ -1,7 +1,7 @@
 .wrapper {
   height: 100vh;
   display: grid;
-  grid-template-columns: 300px;
+  grid-template-columns: 200px;
   grid-template-rows: auto;
   position: absolute;
   top: 0;
@@ -14,20 +14,8 @@
   transition: transform 0.5s ease-out;
 }
 
-.openWrapper {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 200px;
-  grid-template-rows: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-right: 1px #303030 solid;
-  text-align: center;
-  background: #171717;
-  z-index: 200;
+.wrapper.open {
   transform: translateX(0%);
-  transition: transform 0.5s ease-out;
 }
 
 .top {
