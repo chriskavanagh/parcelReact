@@ -7,6 +7,10 @@ import Home from "./components/Home";
 //import ReactDOM from "react-dom";
 
 function App() {
+  const [dimensions, setDimensions] = React.useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
   // initialize side variable.
   //let side;
   const [open, setOpen] = useState(false);
@@ -39,10 +43,29 @@ function App() {
     };
   });
 
+  React.useEffect(() => {
+    async function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+      //console.log(width);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
   // not using this way to show <Sidebar/>
   /* if (open) {
     side = <Sidebar open={open} />;
   } */
+
+  {
+    /* <h2 style={{ color: "white" }}>Height: {dimensions.height}</h2>
+      <h2 style={{ color: "white" }}>Width: {dimensions.width}</h2> */
+  }
   return (
     <>
       <BrowserRouter>
