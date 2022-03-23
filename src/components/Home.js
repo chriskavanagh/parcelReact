@@ -1,8 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useSizeContext } from "../context/size-context";
 import * as classes from "./styles/Home.module.css";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import Button from "./Button";
 
 export default function Home({ click }) {
+  //const dimensions = useContext(SizeContext); (without useSizeContext hook)
+  //const dimensions = useSizeContext(); (use like dimensions.width etc)
+  const { height, width } = useSizeContext(); //(destructure height, weight)
   return (
     <>
       <section className={classes.wrapper}>
@@ -18,9 +23,20 @@ export default function Home({ click }) {
                 About
               </Link>
             </li>
+            <li key={"3"} className={classes.link}>
+              <Link to="/about" className={classes.myLink}>
+                Height: {height}
+              </Link>
+              <li key={"4"} className={classes.link}>
+                <Link to="/about" className={classes.myLink}>
+                  Width: {width}
+                </Link>
+              </li>
+            </li>
           </ul>
         </nav>
         <h1 className={classes.top}>React App With Parcel</h1>
+        <h3 style={{ color: "pink" }}></h3>
         <p className={[classes.para, classes.text].join(" ")}>
           ipsum assumenda animi amet consectetur adipisicing elit. Odio
           excepturi eligendi minima ab hic. Dolorem praesentium possimus ea, a
@@ -28,9 +44,7 @@ export default function Home({ click }) {
           aliquid voluptates enim. Maxime.
         </p>
         <p className={[classes.para2, classes.text].join(" ")}>
-          <button className={classes.btn} onClick={click}>
-            Open Side Drawer
-          </button>
+          <Button name={"Open Side Drawer"} click={click} />
         </p>
       </section>
     </>

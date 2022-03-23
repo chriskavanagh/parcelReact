@@ -1,7 +1,7 @@
 .wrapper {
   box-sizing: border-box;
   display: grid;
-
+  align-items: center;
   row-gap: 3.4rem;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
@@ -9,6 +9,11 @@
     "top top top"
     "myNav     para      ."
     "myNav para2 .";
+}
+
+.wrapper h3 {
+  font-size: 30px;
+  color: #fff;
 }
 
 .text {
@@ -40,6 +45,7 @@
 
 .para2 {
   grid-area: para2;
+  margin: 0 auto;
 }
 
 .para2::before {
@@ -49,12 +55,20 @@
   font-size: 25px;
 }
 
-.wrapper .btn {
-  padding: 7px 10px;
-  margin-left: 1rem;
-  background-color: rgb(199, 103, 40);
-  color: whitesmoke;
+/* .wrapper .btn {
+  padding: 12px 15px;
+  background-color: transparent;
+  color: rgb(199, 103, 40);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
 }
+
+.wrapper .btn:hover {
+  color: white;
+  background-color: rgb(199, 103, 40);
+} */
 
 .myNav {
   grid-area: myNav;
