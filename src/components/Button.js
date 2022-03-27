@@ -1,10 +1,10 @@
 import React from "react";
 import * as classes from "./styles/Button.module.css";
 
-export default function Button(props) {
+export default function Button({ click, name }) {
   return (
-    <div onClick={props.click} className={classes.btn}>
-      {props.name}
+    <div onClick={click} className={classes.btn}>
+      {name}
     </div>
   );
 }
