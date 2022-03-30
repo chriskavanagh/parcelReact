@@ -43,9 +43,9 @@ export default function Home({ click, open }) {
           consequuntur assumenda animi enim accusamus cumque? Repellendus
           aliquid voluptates enim. Maxime.
         </p>
-        <p className={[classes.para2, classes.text].join(" ")}>
+        <div className={[classes.para2, classes.text].join(" ")}>
           <Button name={"Open Side Drawer"} click={click} open={open} />
-        </p>
+        </div>
       </section>
     </>
   );

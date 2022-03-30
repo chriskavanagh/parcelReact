@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import Test from "./components/Test";
 
 function App() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   //let side; initialize side variable.
 
   // prop of open is true, className `.wrapper.open` is used on <Sidebar/>
@@ -18,18 +18,18 @@ function App() {
   };
 
   //  close sideBar when body is clicked
-  /* const onClick = (e) => {
+  const onClick = (e) => {
     console.log("CLICKED");
     if (open) {
       setOpen(!open);
     }
-  }; */
+  };
 
-  const onClick = (e) => {
+  /* const onClick = (e) => {
     console.log("CLICKED");
     //e.stopPropagation();
     open ? setOpen(!open) : console.log("Sidebar Not Open");
-  };
+  }; */
 
   // adds onClick body handler to Body.
   useEffect(() => {
