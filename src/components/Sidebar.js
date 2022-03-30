@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import * as classes from "./styles/Sidebar.module.css";
 
 export default function Sidebar({ open }) {
-  //console.log(typeof 10n);
+  console.log(`Button ${open}`);
 
   /* const sideBaropen = classes.wrapper.open;
   const sideBarClosed = classes.wrapper; */

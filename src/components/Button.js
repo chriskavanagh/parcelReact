@@ -3,8 +3,8 @@ import * as classes from "./styles/Button.module.css";
 
 export default function Button({ click, name }) {
   return (
-    <div onClick={click} className={classes.btn}>
+    <button onClick={click} className={classes.btn}>
       {name}
-    </div>
+    </button>
   );
 }

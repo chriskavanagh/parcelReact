@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, resolvePath } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { SizeContextProvider } from "./context/size-context";
 import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import Test from "./components/Test";
 
 function App() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   //let side; initialize side variable.
 
   // prop of open is true, className `.wrapper.open` is used on <Sidebar/>
@@ -27,6 +27,7 @@ function App() {
 
   const onClick = (e) => {
     console.log("CLICKED");
+    //e.stopPropagation();
     open ? setOpen(!open) : console.log("Sidebar Not Open");
   };
 

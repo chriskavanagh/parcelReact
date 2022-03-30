@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 
-export default function Home({ click }) {
+export default function Home({ click, open }) {
   //const dimensions = useContext(SizeContext); (without useSizeContext hook)
   //const dimensions = useSizeContext(); (use like dimensions.width etc)
   const { height, width } = useSizeContext(); //(destructure height, weight)
@@ -27,11 +27,11 @@ export default function Home({ click }) {
               <Link to="/about" className={classes.myLink}>
                 Height: {height}
               </Link>
-              <li key={"4"} className={classes.link}>
-                <Link to="/about" className={classes.myLink}>
-                  Width: {width}
-                </Link>
-              </li>
+            </li>
+            <li key={"4"} className={classes.link}>
+              <Link to="/about" className={classes.myLink}>
+                Width: {width}
+              </Link>
             </li>
           </ul>
         </nav>
@@ -44,7 +44,7 @@ export default function Home({ click }) {
           aliquid voluptates enim. Maxime.
         </p>
         <p className={[classes.para2, classes.text].join(" ")}>
-          <Button name={"Open Side Drawer"} click={click} />
+          <Button name={"Open Side Drawer"} click={click} open={open} />
         </p>
       </section>
     </>
