@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import * as classes from "./styles/Sidebar.module.css";
 
 export default function Sidebar({ open }) {
-  //console.log(typeof 10n);
+  //console.log(`Sidebar ${open}`);
   const [width, setWidth] = React.useState(0);
 
   React.useEffect(() => {
@@ -17,7 +17,11 @@ export default function Sidebar({ open }) {
   }, [width]);
 
   return (
-    <section className={open ? classes.openWrapper : classes.wrapper}>
+    <section
+      className={
+        !open ? classes.wrapper : [classes.wrapper, classes.open].join(" ")
+      }
+    >
       <nav className={classes.nav}>
         <ul className={classes.top}>
           <li key={"100"} className={classes.myLink}>

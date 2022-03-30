@@ -14,7 +14,11 @@
   transition: transform 0.5s ease-out;
 }
 
-.openWrapper {
+.wrapper.open {
+  transform: translateX(0%);
+}
+
+/* .openWrapper {
   height: 100vh;
   display: grid;
   grid-template-columns: 200px;
@@ -28,7 +32,7 @@
   z-index: 200;
   transform: translateX(0%);
   transition: transform 0.5s ease-out;
-}
+} */
 
 .top {
   margin-top: 5rem;

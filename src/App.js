@@ -17,12 +17,12 @@ function App() {
   };
 
   // function to close sideBar when body is clicked
-  const onClick = (e) => {
+  /* const onClick = (e) => {
     console.log("CLICKED");
     if (open) {
       setOpen(!open);
     }
-  };
+  }; */
 
   /* const onClick = (e) => {
     console.log("CLICKED");
@@ -30,13 +30,13 @@ function App() {
   }; */
 
   // adds onClick body handler to Body.
-  useEffect(() => {
+  /* useEffect(() => {
     document.body.addEventListener("click", onClick);
 
     return () => {
       document.body.removeEventListener("click", onClick);
     };
-  });
+  }); */
 
   // not using this way to show <Sidebar/>
   /* if (open) {
