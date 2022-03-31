@@ -14,29 +14,30 @@ function App() {
   // prop of open is true, className `.wrapper.open` is used on <Sidebar/>
   const clickHandler = (e) => {
     console.log(open);
-    setOpen(!open);
+    setOpen((open) => !open);
+    e.stopPropagation();
   };
 
   //  close sideBar when body is clicked
   const onClick = (e) => {
     console.log("CLICKED");
-    if (open) {
-      setOpen(!open);
+    if (open == true) {
+      setOpen(false);
     }
   };
 
   /* const onClick = (e) => {
-    console.log("CLICKED");
+    console.log(`onClick/App ${open}`);
+    open == true ? setOpen(false) : console.log("Sidebar Not Open");
     //e.stopPropagation();
-    open ? setOpen(!open) : console.log("Sidebar Not Open");
   }; */
 
   // adds onClick body handler to Body.
   useEffect(() => {
-    document.body.addEventListener("click", onClick);
+    window.addEventListener("click", onClick);
 
     return () => {
-      document.body.removeEventListener("click", onClick);
+      window.removeEventListener("click", onClick);
     };
   });
 

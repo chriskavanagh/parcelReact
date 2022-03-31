@@ -44,7 +44,7 @@ export default function Home({ click, open }) {
           aliquid voluptates enim. Maxime.
         </p>
         <div className={[classes.para2, classes.text].join(" ")}>
-          <Button name={"Open Side Drawer"} click={click} open={open} />
+          <Button name={"Open Side Drawer"} click={click} />
         </div>
       </section>
     </>

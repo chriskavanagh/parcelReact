@@ -11,7 +11,9 @@ export default function Sidebar({ open }) {
   return (
     <section
       className={
-        !open ? classes.wrapper : [classes.wrapper, classes.open].join(" ")
+        open == false
+          ? classes.wrapper
+          : [classes.wrapper, classes.open].join(" ")
       }
     >
       <nav className={classes.nav}>
