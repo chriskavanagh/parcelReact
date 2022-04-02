@@ -1,0 +1,22 @@
+.mainNav {
+  display: flex;
+  list-style: none;
+  background: #0d0f11;
+  width: 100%;
+}
+
+.links {
+  padding: 2rem 2rem;
+}
+
+.push {
+  margin-left: auto;
+}
+
+.anchor {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 20px;
+  padding: 5px 8px;
+  cursor: pointer;
+}

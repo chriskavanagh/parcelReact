@@ -1,21 +1,27 @@
-import { Routes, Route } from "react-router-dom";
 import { SizeContextProvider } from "./context/size-context";
 import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
+import TopNavbar from "./components/TopNavbar";
 import Sidebar from "./components/Sidebar";
+import MyData from "./components/MyData";
 import About from "./components/About";
 import Home from "./components/Home";
 import Test from "./components/Test";
+//import { ReactQueryDevtools } from "react-query/devtools";
+//import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 function App() {
+  //const queryClient = new QueryClient();
+  const url = `https://course-api.com/react-store-products`;
   const [open, setOpen] = useState(false);
   //let side; initialize side variable.
 
-  // prop of open is true, className `.wrapper.open` is used on <Sidebar/>
-  const clickHandler = (e) => {
+  const clickHandler = (event) => {
     console.log(open);
     setOpen((open) => !open);
-    e.stopPropagation();
+    // use "event.stopPropagation or the click will bleed through to body"
+    event.stopPropagation();
   };
 
   //  close sideBar when body is clicked
@@ -46,12 +52,16 @@ function App() {
   return (
     <>
       <SizeContextProvider>
+        <TopNavbar />
         <Sidebar open={open} />
         {/* {side} */}
+
         <Routes>
           <Route path="/" element={<Home click={clickHandler} />} />
           <Route path="/about" element={<About click={clickHandler} />} />
           <Route path="/test" element={<Test click={clickHandler} />} />
+          <Route path="/data" element={<MyData />} />
+
           <Route
             path="*"
             element={

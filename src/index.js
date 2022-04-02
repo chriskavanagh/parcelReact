@@ -1,19 +1,27 @@
 import "./index.css";
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import App from "./App.js";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+import { ReactQueryDevtools } from "react-query/devtools";
+import { QueryClient, QueryClientProvider } from "react-query";
 
-/* ReactDOM.render(
+const queryClient = new QueryClient();
+
+ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <App />
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   </BrowserRouter>,
   document.getElementById("app")
-); */
+);
 
-const root = ReactDOM.createRoot(document.getElementById("app"));
+// for react 18
+/* const root = ReactDOM.createRoot(document.getElementById("app"));
 root.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>
-);
+); */

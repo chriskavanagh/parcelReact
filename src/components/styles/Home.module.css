@@ -24,11 +24,18 @@
 }
 
 .top {
-  font-size: 60px;
-  color: rgb(199, 103, 40);
+  font-size: 3rem;
+  line-height: 1;
+  color: #fcba28;
   grid-area: top;
   margin: 3rem 0 6rem 0;
   justify-self: center;
+  opacity: 0.8;
+  font-weight: 900;
+}
+
+.top span {
+  color: white;
 }
 
 .para {

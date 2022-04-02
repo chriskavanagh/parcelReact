@@ -1,11 +1,11 @@
 .btn {
-  padding: 10px 24px;
+  padding: 12px 26px;
   background: none;
-  color: rgb(199, 103, 40);
+  color: #ffd500;
   border-radius: 1em;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 700;
+
   border: 1px white solid;
   /* width: 12rem; */
   text-align: center;
