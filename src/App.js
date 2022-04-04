@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import TopNavbar from "./components/TopNavbar";
 import Sidebar from "./components/Sidebar";
 import MyData from "./components/MyData";
+import Characters from "./components/Characters";
 import About from "./components/About";
 import Home from "./components/Home";
 import Test from "./components/Test";
@@ -13,7 +14,8 @@ import Test from "./components/Test";
 
 function App() {
   //const queryClient = new QueryClient();
-  const url = `https://course-api.com/react-store-products`;
+  //const url = `https://course-api.com/react-store-products`;
+  //const url = `https://rickandmortyapi.com/api`;
   const [open, setOpen] = useState(false);
   //let side; initialize side variable.
 
@@ -58,6 +60,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home click={clickHandler} />} />
+          <Route path="/person" element={<Characters />} />
           <Route path="/about" element={<About click={clickHandler} />} />
           <Route path="/test" element={<Test click={clickHandler} />} />
           <Route path="/data" element={<MyData />} />
