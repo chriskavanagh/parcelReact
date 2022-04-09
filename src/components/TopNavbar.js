@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import * as classes from "./styles/TopNavbar.module.css";
 
 export default function TopNavbar() {
@@ -30,11 +31,11 @@ export default function TopNavbar() {
   );
 }
 
-const styles = {
+/* const styles = {
   anchor: {
     textDecoration: "none",
     color: "red",
     fontSize: "20px",
     background: "gray",
   },
-};
+}; */

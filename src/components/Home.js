@@ -4,10 +4,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 
-export default function Home({ click, open }) {
+export default function Home({ click }) {
   //const dimensions = useContext(SizeContext); (without useSizeContext hook)
   //const dimensions = useSizeContext(); (use like dimensions.width etc)
   const { height, width } = useSizeContext(); //(destructure height, weight)
+
   return (
     <>
       <section className={classes.wrapper}>

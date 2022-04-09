@@ -2,10 +2,10 @@ import { SizeContextProvider } from "./context/size-context";
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
+import Characters from "./components/Characters";
 import TopNavbar from "./components/TopNavbar";
 import Sidebar from "./components/Sidebar";
 import MyData from "./components/MyData";
-import Characters from "./components/Characters";
 import About from "./components/About";
 import Home from "./components/Home";
 import Test from "./components/Test";
@@ -17,6 +17,7 @@ function App() {
   //const url = `https://course-api.com/react-store-products`;
   //const url = `https://rickandmortyapi.com/api`;
   const [open, setOpen] = useState(false);
+  console.log(typeof open);
   //let side; initialize side variable.
 
   const clickHandler = (event) => {
@@ -27,9 +28,9 @@ function App() {
   };
 
   //  close sideBar when body is clicked
-  const onClick = (e) => {
-    console.log("CLICKED");
-    if (open == true) {
+  const onClick = (event) => {
+    console.log(`Body Is Clicked`);
+    if (open) {
       setOpen(false);
     }
   };
@@ -48,6 +49,29 @@ function App() {
       window.removeEventListener("click", onClick);
     };
   });
+
+  //
+  const scrollClick = (event) => {
+    if (open) {
+      console.log("scrollClick is clicked");
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", onClick);
+
+    return () => {
+      window.removeEventListener("click", onClick);
+    };
+  });
+
+  // try no click event. or not an eventListener
+  useEffect(() => {
+    scrollClick();
+  }, [open]);
 
   // open ? side=<Sidebar open={open} /> : null;
 
