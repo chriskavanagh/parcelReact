@@ -1,9 +1,4 @@
 /* @import "https://fonts.googleapis.com/css?family=Arimo"; */
-@font-face {
-  font-family: "Arimo-Bold-Italic";
-  src: local("Arimo"),
-    url("../../fonts/arimo/static/Arimo-BoldItalic.ttf") format("truetype");
-}
 
 .topTitle {
   color: white;

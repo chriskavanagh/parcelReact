@@ -1,4 +1,5 @@
 .wrapper {
+  font-family: "Futura Book Italic Font";
   box-sizing: border-box;
   display: grid;
   align-items: center;
@@ -24,7 +25,7 @@
 }
 
 .top {
-  font-size: 3rem;
+  font-size: 4rem;
   line-height: 1;
   color: #fcba28;
   grid-area: top;
@@ -32,6 +33,7 @@
   justify-self: center;
   opacity: 0.8;
   font-weight: 900;
+  font-family: "Futura Book Italic Font";
 }
 
 .top span {

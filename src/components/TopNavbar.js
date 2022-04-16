@@ -1,11 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaList } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 import * as classes from "./styles/TopNavbar.module.css";
 
-export default function TopNavbar() {
+export default function TopNavbar({ click }) {
   return (
     <nav>
       <ul className={classes.mainNav}>
+        <li className={classes.links}>
+          <GiHamburgerMenu
+            onClick={click}
+            style={{ color: "white", fontSize: "1.6rem" }}
+          />
+        </li>
         <li className={classes.links}>
           <a className={classes.anchor} href="">
             About

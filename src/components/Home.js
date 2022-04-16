@@ -37,7 +37,7 @@ export default function Home({ click }) {
           </ul>
         </nav>
         <h1 className={classes.top}>
-          React <span>App With</span> Parcel
+          React <span>App With Parcel</span>
         </h1>
         <h3 style={{ color: "pink" }}></h3>
         <p className={[classes.para, classes.text].join(" ")}>
