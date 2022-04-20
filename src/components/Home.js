@@ -1,13 +1,16 @@
-import { useSizeContext } from "../context/size-context";
+//import { useSizeContext } from "../context/size-context";
 import * as classes from "./styles/Home.module.css";
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
+//import outSideClick from "../hooks/outSideClick";
 
 export default function Home({ click }) {
+  //const sideBar = useRef(null);
+  //const outclick = outSideClick(sideBar);
   //const dimensions = useContext(SizeContext); (without useSizeContext hook)
   //const dimensions = useSizeContext(); (use like dimensions.width etc)
-  const { height, width } = useSizeContext(); //(destructure height, weight)
+  //const { height, width } = useSizeContext(); //(destructure height, weight)
 
   return (
     <>
@@ -24,7 +27,7 @@ export default function Home({ click }) {
                 About
               </Link>
             </li>
-            <li key={"3"} className={classes.link}>
+            {/* <li key={"3"} className={classes.link}>
               <Link to="/about" className={classes.myLink}>
                 Height: {height}
               </Link>
@@ -33,7 +36,7 @@ export default function Home({ click }) {
               <Link to="/about" className={classes.myLink}>
                 Width: {width}
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
         <h1 className={classes.top}>

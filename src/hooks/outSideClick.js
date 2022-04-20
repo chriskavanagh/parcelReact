@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
 export default function outSideClick(ref) {
-  const [isClicked, setIsClicked] = useState();
+  const [isClicked, setIsClicked] = useState(false);
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {

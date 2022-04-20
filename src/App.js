@@ -1,11 +1,11 @@
 import { SizeContextProvider } from "./context/size-context";
-import React, { useState, useEffect, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import Characters from "./components/Characters";
 import TopNavbar from "./components/TopNavbar";
 import Sidebar from "./components/Sidebar";
 import MyData from "./components/MyData";
+import React, { useState } from "react";
 import About from "./components/About";
 import Home from "./components/Home";
 import Test from "./components/Test";
@@ -13,23 +13,18 @@ import Test from "./components/Test";
 //import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 function App(props) {
-  //const queryClient = new QueryClient();
-  //const url = `https://course-api.com/react-store-products`;
-  //const url = `https://rickandmortyapi.com/api`;
   const [open, setOpen] = useState(false);
 
   //let side; initialize side variable.
 
   const clickHandler = (event) => {
-    setOpen((open) => !open);
-    // use "event.stopPropagation or the click will bleed through to body"
     event.stopPropagation();
+    open == false ? setOpen(true) : setOpen(false);
   };
 
   //  close sideBar when body is clicked
   const onClick = (event) => {
     event.stopPropagation();
-
     if (open) {
       setOpen(false);
     }
@@ -80,7 +75,7 @@ function App(props) {
     <>
       <SizeContextProvider>
         <TopNavbar click={clickHandler} />
-        <Sidebar open={open} />
+        <Sidebar open={open} setOpen={setOpen} />
         {/* {side} */}
 
         <Routes>

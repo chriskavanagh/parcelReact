@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import outSideClick from "../hooks/outSideClick";
+//import outSideClick from "../hooks/outSideClick";
 import * as classes from "./styles/About.module.css";
 
 export default function About({ click, open, setOpen }) {
@@ -7,7 +7,7 @@ export default function About({ click, open, setOpen }) {
   //const outClick = outSideClick(sideBarRef);
   //console.log(outClick);
 
-  const onClick = (event) => {
+  /* const onClick = (event) => {
     //console.log(event);
     event.stopPropagation();
     open ? setOpen(false) : console.log("Already Closed");
@@ -19,7 +19,7 @@ export default function About({ click, open, setOpen }) {
     return () => {
       window.removeEventListener("click", onClick);
     };
-  }, [open]);
+  }, [open]); */
   return (
     <section className={classes.wrapper}>
       <h1 className={classes.top}>About Us</h1>
