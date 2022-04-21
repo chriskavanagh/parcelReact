@@ -17,5 +17,5 @@ export default function outSideClick(ref) {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [ref]);
-  return isClicked;
+  return { isClicked };
 }
