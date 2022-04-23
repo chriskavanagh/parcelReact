@@ -15,61 +15,18 @@ import Test from "./components/Test";
 function App(props) {
   const [open, setOpen] = useState(false);
 
-  //let side; initialize side variable.
-
   const clickHandler = (event) => {
     event.stopPropagation();
     open == false ? setOpen(true) : setOpen(false);
   };
 
   //  close sideBar when body is clicked
-  const onClick = (event) => {
+  /*  const onClick = (event) => {
     event.stopPropagation();
     if (open) {
       setOpen(false);
     }
-  };
-
-  /* const onClick = (e) => {
-    console.log(`onClick/App ${open}`);
-    open == true ? setOpen(false) : console.log("Sidebar Not Open");
-    //e.stopPropagation();
   }; */
-
-  // adds onClick body handler to Body.
-  /* useEffect(() => {
-    window.addEventListener("click", onClick);
-
-    return () => {
-      window.removeEventListener("click", onClick);
-    };
-  }); */
-
-  //
-  /* const scrollClick = (event) => {
-    if (open) {
-      console.log("scrollClick is clicked");
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("click", onClick);
-
-    return () => {
-      window.removeEventListener("click", onClick);
-    };
-  });
-
-  // try no click event. or not an eventListener
-  useEffect(() => {
-    scrollClick();
-  }, [open]); */
-
-  // open ? side=<Sidebar open={open} /> : null;
-  //console.log({ type: side });
 
   return (
     <>

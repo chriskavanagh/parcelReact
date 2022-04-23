@@ -10,10 +10,11 @@ import {
 import * as classes from "./styles/SidebarData.module.css";
 import { VscMenu } from "react-icons/vsc";
 
-export default function SidebarData() {
+export default function SidebarData({ open, setOpen }) {
   return (
     <main className={classes.wrapper}>
       <VscMenu
+        onClick={() => setOpen(!open)}
         style={{
           color: "white",
           fontSize: "1.8rem",
@@ -23,28 +24,28 @@ export default function SidebarData() {
       />
       <div className={classes.text}>
         <FaBeer />
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
       </div>
       <div className={classes.text}>
         <FaAdjust />
-        <a href="/about">About</a>
+        <Link to="/about">About</Link>
       </div>
       <div className={classes.text}>
         <FaArtstation />
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
       </div>
 
       <div className={classes.text}>
         <FaBluetooth />
-        <a href="/">React</a>
+        <Link to="/about">React</Link>
       </div>
       <div className={classes.text}>
         <FaDashcube />
-        <a href="/about">About</a>
+        <Link to="/about">About</Link>
       </div>
       <div className={classes.text}>
         <FaCodepen />
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
       </div>
 
       <div

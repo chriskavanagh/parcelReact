@@ -1,23 +1,23 @@
 import SidebarData from "./SidebarData";
-//import outSideClick from "../hooks/outSideClick";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import * as classes from "./styles/Sidebar.module.css";
-//import { VscMenu } from "react-icons/vsc";
-// <FaBeer style={{ marginRight: "8px", marginLeft: "12px" }} />
 
 export default function Sidebar({ open, setOpen }) {
   const node = useRef();
-  //const sideBarRef = useRef(null);
-  //const { isClicked } = outSideClick(sideBarRef);
+  //const node = useRef(false);
+
   console.log(`open = ${open}`);
   //console.log(`isClicked = ${isClicked}`);
   //console.log(outClick);
 
   const handleClick = (e) => {
+    console.log(e.timeStamp);
     if (node.current.contains(e.target)) {
+      console.log(`INSIDE CLICK = ${e.target}`);
       // inside click
       return;
     } // outside click
+    console.log(`OUT CLICK = ${e.target}`);
     setOpen(false);
   };
 
@@ -28,7 +28,7 @@ export default function Sidebar({ open, setOpen }) {
     return () => {
       document.removeEventListener("click", handleClick);
     };
-  });
+  }, [open]);
 
   return (
     <>
@@ -39,7 +39,7 @@ export default function Sidebar({ open, setOpen }) {
           !open ? classes.wrapper : [classes.wrapper, classes.open].join(" ")
         }
       >
-        <SidebarData />
+        <SidebarData open={open} setOpen={setOpen} />
       </section>
     </>
   );
