@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaList } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import * as classes from "./styles/TopNavbar.module.css";
 
@@ -15,24 +14,24 @@ export default function TopNavbar({ click }) {
           />
         </li>
         <li className={classes.links}>
-          <a className={classes.anchor} href="">
+          <Link className={classes.anchor} to="/about">
             About
-          </a>
+          </Link>
         </li>
         <li className={classes.links}>
-          <a className={classes.anchor} href="">
+          <Link className={classes.anchor} to="/home">
             Products
-          </a>
+          </Link>
         </li>
         <li className={classes.links}>
-          <a className={classes.anchor} href="">
+          <Link className={classes.anchor} to="about">
             Our Team
-          </a>
+          </Link>
         </li>
         <li className={[classes.push, classes.links].join(" ")}>
-          <a className={classes.anchor} href="">
+          <Link className={classes.anchor} to="/home">
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

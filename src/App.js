@@ -33,7 +33,6 @@ function App(props) {
       <SizeContextProvider>
         <TopNavbar click={clickHandler} />
         <Sidebar open={open} setOpen={setOpen} />
-        {/* {side} */}
 
         <Routes>
           <Route path="/" element={<Home click={clickHandler} />} />

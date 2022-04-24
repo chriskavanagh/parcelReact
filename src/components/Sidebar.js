@@ -1,9 +1,11 @@
 import SidebarData from "./SidebarData";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
+//import outSideClick from "../hooks/outSideClick";
 import * as classes from "./styles/Sidebar.module.css";
 
 export default function Sidebar({ open, setOpen }) {
   const node = useRef();
+
   //const node = useRef(false);
 
   console.log(`open = ${open}`);
