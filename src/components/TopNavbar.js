@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { VscMenu } from "react-icons/vsc";
+//import { GiHamburgerMenu } from "react-icons/gi";
 import * as classes from "./styles/TopNavbar.module.css";
 
 export default function TopNavbar({ click }) {
@@ -8,9 +9,13 @@ export default function TopNavbar({ click }) {
     <nav>
       <ul className={classes.mainNav}>
         <li className={classes.links}>
-          <GiHamburgerMenu
+          <VscMenu
             onClick={click}
-            style={{ color: "white", fontSize: "1.6rem" }}
+            style={{
+              color: "white",
+              fontSize: "1.7rem",
+              marginLeft: "10px",
+            }}
           />
         </li>
         <li className={classes.links}>

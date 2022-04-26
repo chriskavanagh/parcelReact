@@ -23,28 +23,28 @@ export default function SidebarData({ open, setOpen }) {
         }}
       />
       <div className={classes.text}>
-        <FaBeer />
+        <FaBeer className={classes.reactIcons} />
         <Link to="/">Home</Link>
       </div>
       <div className={classes.text}>
-        <FaAdjust />
+        <FaAdjust className={classes.reactIcons} />
         <Link to="/about">About</Link>
       </div>
       <div className={classes.text}>
-        <FaArtstation />
+        <FaArtstation className={classes.reactIcons} />
         <Link to="/">Home</Link>
       </div>
 
       <div className={classes.text}>
-        <FaBluetooth />
+        <FaBluetooth className={classes.reactIcons} />
         <Link to="/about">React</Link>
       </div>
       <div className={classes.text}>
-        <FaDashcube />
+        <FaDashcube className={classes.reactIcons} />
         <Link to="/about">About</Link>
       </div>
       <div className={classes.text}>
-        <FaCodepen />
+        <FaCodepen className={classes.reactIcons} />
         <Link to="/">Home</Link>
       </div>
 

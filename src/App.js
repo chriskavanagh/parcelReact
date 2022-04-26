@@ -17,7 +17,8 @@ function App(props) {
 
   const clickHandler = (event) => {
     event.stopPropagation();
-    open == false ? setOpen(true) : setOpen(false);
+    //open == false ? setOpen(true) : setOpen(false);
+    open ? setOpen(!open) : setOpen(!open);
   };
 
   //  close sideBar when body is clicked
@@ -50,7 +51,10 @@ function App(props) {
             path="*"
             element={
               <main style={styles.main}>
-                <h1 style={styles.h1}>No Such Page Exists!</h1>
+                <h1 style={styles.h1}>
+                  Something Went <span style={styles.span}>Wrong!</span>
+                </h1>
+                <h2 style={styles.h2}>No Such Page Exists</h2>
                 <h3>
                   <span style={styles.span}>404 Error</span> - Page Not Found
                 </h3>
@@ -70,7 +74,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "start",
     color: "white",
     fontSize: "3rem",
     height: "100vh",
@@ -78,6 +82,7 @@ const styles = {
   h1: {
     marginBottom: "3.8rem",
   },
+  h2: { color: "white", marginBottom: "6rem" },
   span: {
     color: "red",
   },
