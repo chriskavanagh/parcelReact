@@ -6,14 +6,9 @@ import * as classes from "./styles/Sidebar.module.css";
 export default function Sidebar({ open, setOpen }) {
   const node = useRef();
 
-  //const node = useRef(false);
-
   console.log(`open = ${open}`);
-  //console.log(`isClicked = ${isClicked}`);
-  //console.log(outClick);
 
   const handleClick = (e) => {
-    console.log(e.timeStamp);
     if (node.current.contains(e.target)) {
       console.log(`INSIDE CLICK = ${e.target}`);
       // inside click

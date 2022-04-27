@@ -12,13 +12,13 @@ import Test from "./components/Test";
 //import { ReactQueryDevtools } from "react-query/devtools";
 //import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
-function App(props) {
+function App() {
   const [open, setOpen] = useState(false);
 
   const clickHandler = (event) => {
     event.stopPropagation();
     //open == false ? setOpen(true) : setOpen(false);
-    open ? setOpen(!open) : setOpen(!open);
+    open ? setOpen(false) : setOpen(true);
   };
 
   //  close sideBar when body is clicked
@@ -54,7 +54,9 @@ function App(props) {
                 <h1 style={styles.h1}>
                   Something Went <span style={styles.span}>Wrong!</span>
                 </h1>
-                <h2 style={styles.h2}>No Such Page Exists</h2>
+                <h2 style={styles.h2}>
+                  <span style={styles.span}>No</span> Such Page Exists
+                </h2>
                 <h3>
                   <span style={styles.span}>404 Error</span> - Page Not Found
                 </h3>
@@ -81,6 +83,7 @@ const styles = {
   },
   h1: {
     marginBottom: "3.8rem",
+    marginTop: "3rem",
   },
   h2: { color: "white", marginBottom: "6rem" },
   span: {
