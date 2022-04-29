@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+//import outSideClick from "../hooks/outSideClick";
 import * as classes from "./styles/About.module.css";
 
-export default function About({ click }) {
+export default function About({ click, open, setOpen }) {
+  //const sideBarRef = useRef(null);
+  //const outClick = outSideClick(sideBarRef);
+  //console.log(outClick);
+
+  /* const onClick = (event) => {
+    //console.log(event);
+    event.stopPropagation();
+    open ? setOpen(false) : console.log("Already Closed");
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", onClick);
+
+    return () => {
+      window.removeEventListener("click", onClick);
+    };
+  }, [open]); */
   return (
     <section className={classes.wrapper}>
       <h1 className={classes.top}>About Us</h1>

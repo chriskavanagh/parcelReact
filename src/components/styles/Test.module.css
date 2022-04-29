@@ -1,0 +1,25 @@
+.section {
+  background-color: black;
+}
+
+/* .title {
+  color: pink;
+} */
+
+.wrapper > h1 {
+  color: red;
+  font-size: 40px;
+}
+
+.wrapper > h3 {
+  color: white;
+  font-size: 30px;
+}
+
+.wrapper > p {
+  color: white;
+}
+
+.wrapper ul > li {
+  color: blueviolet;
+}

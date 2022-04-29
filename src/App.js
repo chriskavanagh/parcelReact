@@ -1,59 +1,92 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SizeContextProvider } from "./context/size-context";
+import { Routes, Route } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import Characters from "./components/Characters";
+import TopNavbar from "./components/TopNavbar";
 import Sidebar from "./components/Sidebar";
+import MyData from "./components/MyData";
+import React, { useState } from "react";
 import About from "./components/About";
 import Home from "./components/Home";
-//import ReactDOM from "react-dom";
+import Test from "./components/Test";
+//import { ReactQueryDevtools } from "react-query/devtools";
+//import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 function App() {
-  let side;
   const [open, setOpen] = useState(false);
 
-  // prop of open is true, className openWrapper is used on <Sidebar/>
-  const clickHandler = (e) => {
-    console.log(open);
-    setOpen(!open);
+  const clickHandler = (event) => {
+    event.stopPropagation();
+    //open == false ? setOpen(true) : setOpen(false);
+    open ? setOpen(false) : setOpen(true);
   };
 
-  // function to close sideBar when body is clicked
-  /* const onClick = (e) => {
-    console.log("CLICKED");
+  //  close sideBar when body is clicked
+  /*  const onClick = (event) => {
+    event.stopPropagation();
     if (open) {
-      setOpen(!open);
+      setOpen(false);
     }
   }; */
 
-  /* const onClick = (e) => {
-    console.log("CLICKED");
-    open ? setOpen(!open) : console.log("Sidebar Not Open");
-  }; */
-
-  // adds onClick body handler to Body.
-  /* useEffect(() => {
-    document.body.addEventListener("click", onClick);
-
-    return () => {
-      document.body.removeEventListener("click", onClick);
-    };
-  }); */
-
-  // not using this way to show <Sidebar/>
-  /* if (open) {
-    side = <Sidebar open={open} />;
-  } */
   return (
     <>
-      <BrowserRouter>
-        <Sidebar open={open} />
-        {/* {side} */}
+      <SizeContextProvider>
+        <TopNavbar click={clickHandler} />
+        <Sidebar open={open} setOpen={setOpen} />
+
         <Routes>
           <Route path="/" element={<Home click={clickHandler} />} />
-          <Route path="/about" element={<About click={clickHandler} />} />
+          <Route path="/person" element={<Characters />} />
+          <Route
+            path="/about"
+            element={
+              <About click={clickHandler} open={open} setOpen={setOpen} />
+            }
+          />
+          <Route path="/test" element={<Test click={clickHandler} />} />
+          <Route path="/data" element={<MyData />} />
+
+          <Route
+            path="*"
+            element={
+              <main style={styles.main}>
+                <h1 style={styles.h1}>
+                  Something Went <span style={styles.span}>Wrong!</span>
+                </h1>
+                <h2 style={styles.h2}>
+                  <span style={styles.span}>No</span> Such Page Exists
+                </h2>
+                <h3>
+                  <span style={styles.span}>404 Error</span> - Page Not Found
+                </h3>
+              </main>
+            }
+          />
         </Routes>
-      </BrowserRouter>
+      </SizeContextProvider>
     </>
   );
 }
 
 export default App;
+
+const styles = {
+  main: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "start",
+    color: "white",
+    fontSize: "3rem",
+    height: "100vh",
+  },
+  h1: {
+    marginBottom: "3.8rem",
+    marginTop: "3rem",
+  },
+  h2: { color: "white", marginBottom: "6rem" },
+  span: {
+    color: "red",
+  },
+};
