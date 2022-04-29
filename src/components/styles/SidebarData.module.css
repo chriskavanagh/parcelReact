@@ -15,12 +15,11 @@
   color: rgb(221, 214, 214);
   text-decoration: none;
 }
-hr.divider {
-  color: rgb(204, 82, 82);
-  border-top: 0.3px dotted #bbb;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
+.dashed {
+  border: 0;
+  border-top: 1px dotted red;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .border {
   border-bottom: 1px rgb(158, 158, 158, 0.4) solid;

@@ -12,7 +12,7 @@ export default function Sidebar({ open, setOpen }) {
     if (node.current.contains(e.target)) {
       console.log(`INSIDE CLICK = ${e.target}`);
       // inside click
-      return;
+      return null;
     } // outside click
     console.log(`OUT CLICK = ${e.target}`);
     setOpen(false);
