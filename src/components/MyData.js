@@ -4,8 +4,8 @@ import { useQuery } from "react-query";
 
 export default function MyData() {
   const fetchList = async () => {
-    const res = await fetch(`https://course-api.com/react-store-products`);
-    return res.json();
+    const results = await fetch(`https://randomuser.me/api/?results=10`);
+    return results.json();
   };
 
   const { data, isLoading, error } = useQuery("list", fetchList);
@@ -18,10 +18,17 @@ export default function MyData() {
   }
   return (
     <div>
-      <ul>
-        {data.map((obj) => (
-          <li key={obj.id} style={{ color: "white", margin: "1.5rem" }}>
-            <h3>{obj.name}</h3>
+      <ul style={{ listStyle: "none" }}>
+        {data.results.map((obj) => (
+          <li
+            key={obj.id.value.toString()}
+            style={{ color: "white", margin: "1.5rem" }}
+          >
+            <h2>
+              {obj.name.title} {obj.name.first} {obj.name.last}
+            </h2>
+            <h3>{obj.email}</h3>
+            <img src={obj.picture.thumbnail} style={{ marginBottom: "1rem" }} />
           </li>
         ))}
       </ul>
