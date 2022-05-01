@@ -1,0 +1,27 @@
+.listWrapper {
+  display: grid;
+  grid-template-columns: 550px 550px;
+  justify-items: center;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  color: rgba(255, 217, 0, 0.651);
+  margin-bottom: 2rem;
+}
+
+.name {
+  color: darkgray;
+}
+
+.pic {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.email {
+  color: rgba(7, 98, 209, 0.644);
+}

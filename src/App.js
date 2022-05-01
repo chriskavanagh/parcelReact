@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import About from "./components/About";
 import Home from "./components/Home";
 import Test from "./components/Test";
+import People from "./components/People";
 //import { ReactQueryDevtools } from "react-query/devtools";
 //import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
@@ -38,6 +39,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home click={clickHandler} />} />
           <Route path="/person" element={<Characters />} />
+          <Route path="/people" element={<People />} />
           <Route
             path="/about"
             element={
