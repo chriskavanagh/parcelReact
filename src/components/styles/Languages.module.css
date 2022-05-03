@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+h1 {
+  margin-bottom: 5rem;
+}
+
 ul {
   list-style: none;
 }

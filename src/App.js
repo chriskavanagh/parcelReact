@@ -12,6 +12,7 @@ import Test from "./components/Test";
 import People from "./components/People";
 import Languages from "./components/Languages";
 import SuperHeroes from "./components/SuperHeroes";
+import Pagination from "./components/Pagination";
 
 //import { ReactQueryDevtools } from "react-query/devtools";
 //import { QueryClient, QueryClientProvider, useQuery } from "react-query";
@@ -45,6 +46,7 @@ function App() {
           <Route path="/person" element={<Characters />} />
           <Route path="/lang" element={<Languages />} />
           <Route path="/people" element={<People />} />
+          <Route path="/pagination" element={<Pagination />} />
           <Route
             path="/about"
             element={
