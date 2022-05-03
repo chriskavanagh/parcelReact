@@ -10,6 +10,9 @@ import About from "./components/About";
 import Home from "./components/Home";
 import Test from "./components/Test";
 import People from "./components/People";
+import Languages from "./components/Languages";
+import SuperHeroes from "./components/SuperHeroes";
+
 //import { ReactQueryDevtools } from "react-query/devtools";
 //import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
@@ -38,7 +41,9 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home click={clickHandler} />} />
+
           <Route path="/person" element={<Characters />} />
+          <Route path="/lang" element={<Languages />} />
           <Route path="/people" element={<People />} />
           <Route
             path="/about"
@@ -47,6 +52,7 @@ function App() {
             }
           />
           <Route path="/test" element={<Test click={clickHandler} />} />
+          <Route path="/heroes" element={<SuperHeroes />} />
           <Route path="/data" element={<MyData />} />
 
           <Route

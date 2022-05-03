@@ -2,7 +2,7 @@
 import { useQuery } from "react-query";
 
 const fetchList = async () => {
-  const results = await fetch(`https://randomuser.me/api/?results=10`);
+  const results = await fetch(`https://randomuser.me/api/?page=3&results=10`);
   return results.json();
 };
 

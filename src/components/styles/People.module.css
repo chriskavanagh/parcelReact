@@ -1,6 +1,6 @@
 .listWrapper {
   display: grid;
-  grid-template-columns: 550px 550px;
+  grid-template-columns: 650px 650px;
   justify-items: center;
   list-style: none;
   align-items: center;
@@ -9,7 +9,7 @@
 
 .title {
   text-align: center;
-  color: rgba(255, 217, 0, 0.651);
+  color: rgb(184, 164, 54);
   margin-bottom: 2rem;
 }
 

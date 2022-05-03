@@ -24,18 +24,18 @@ export default function TopNavbar({ click }) {
           </Link>
         </li>
         <li className={classes.links}>
-          <Link className={classes.anchor} to="/home">
-            Products
+          <Link className={classes.anchor} to="/people">
+            People
           </Link>
         </li>
         <li className={classes.links}>
-          <Link className={classes.anchor} to="about">
-            Our Team
+          <Link className={classes.anchor} to="/data">
+            Data
           </Link>
         </li>
         <li className={[classes.push, classes.links].join(" ")}>
-          <Link className={classes.anchor} to="/home">
-            Contact
+          <Link className={classes.anchor} to="/lang">
+            Languages
           </Link>
         </li>
       </ul>
