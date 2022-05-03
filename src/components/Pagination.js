@@ -15,7 +15,7 @@ function Pagination() {
   const [pageNum, setPageNum] = useState(1);
   console.log(pageNum);
 
-  const { isLoading, isError, error, data } = useQuery(
+  const { isLoading, error, data } = useQuery(
     ["people", pageNum],
     () => fetchPeople(pageNum),
     { keepPreviousData: true }
