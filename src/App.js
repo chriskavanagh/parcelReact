@@ -13,6 +13,7 @@ import People from "./components/People";
 import Languages from "./components/Languages";
 import SuperHeroes from "./components/SuperHeroes";
 import Pagination from "./components/Pagination";
+import InfiniteQuery from "./components/InfiniteQuery";
 
 //import { ReactQueryDevtools } from "react-query/devtools";
 //import { QueryClient, QueryClientProvider, useQuery } from "react-query";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/lang" element={<Languages />} />
           <Route path="/people" element={<People />} />
           <Route path="/pagination" element={<Pagination />} />
+          <Route path="/infinite" element={<InfiniteQuery />} />
           <Route
             path="/about"
             element={

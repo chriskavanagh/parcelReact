@@ -15,22 +15,25 @@ function Pagination() {
   const [pageNum, setPageNum] = useState(1);
   console.log(pageNum);
 
-  const { isLoading, error, data } = useQuery(
+  const { isLoading, error, isPreviousData, hasNextPage, data } = useQuery(
     ["people", pageNum],
     () => fetchPeople(pageNum),
     { keepPreviousData: true }
   );
-  //console.log(data);
 
   if (isLoading) {
-    return <h3 style={{ color: "red" }}>Loading. . .</h3>;
+    return <h3 style={{ color: "red", textAlign: "center" }}>Loading. . .</h3>;
   }
   if (error) {
-    return <h3 style={{ color: "red" }}>Error! {error.message}</h3>;
+    return (
+      <h3 style={{ color: "red", textAlign: "center" }}>
+        Error! {error.message}
+      </h3>
+    );
   }
   return (
-    <div>
-      <h1>Pagination</h1>
+    <div style={styles.wrapper}>
+      <h1>React Query Pagination Example</h1>
       <div className="dataWrapper">
         <ul>
           {data.data.results.map((person) => (
@@ -39,14 +42,16 @@ function Pagination() {
             </li>
           ))}
         </ul>
-        <div className="btn">
+        <div style={styles.btn}>
           <button
+            style={styles.btns}
             onClick={() => setPageNum((page) => page - 1)}
             disabled={pageNum === 1}
           >
             Prev Page
           </button>
           <button
+            style={styles.btns}
             onClick={() => setPageNum((page) => page + 1)}
             disabled={pageNum === 10}
           >
@@ -59,3 +64,18 @@ function Pagination() {
 }
 
 export default Pagination;
+
+const styles = {
+  wrapper: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  btns: {
+    padding: "5px 10px",
+  },
+  btnsLast: {
+    marginLeft: "1rem",
+  },
+};
