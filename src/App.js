@@ -15,9 +15,6 @@ import SuperHeroes from "./components/SuperHeroes";
 import Pagination from "./components/Pagination";
 import InfiniteQuery from "./components/InfiniteQuery";
 
-//import { ReactQueryDevtools } from "react-query/devtools";
-//import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-
 function App() {
   const [open, setOpen] = useState(false);
 
